@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Conversor de Moedas</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Conversor de Moedas</h1>
+      <p class="muted">API: exchangerate.host (gratuita, sem chave).</p>
+    </header>
+
+    <section class="card converter-card" aria-labelledby="convTitle">
+      <h2 id="convTitle">Converter</h2>
+
+      <div class="row form-row">
+        <div class="field">
+          <label for="amount">Valor</label>
+          <input id="amount" type="number" value="1" min="0" step="any" />
+        </div>
+
+        <div class="field">
+          <label for="from">De</label>
+          <select id="from"></select>
+        </div>
+
+        <div class="field">
+          <label for="to">Para</label>
+          <select id="to"></select>
+        </div>
+
+        <div class="field actions">
+          <button id="swapBtn" class="btn">Trocar</button>
+          <button id="convertBtn" class="btn primary">Converter</button>
+        </div>
+      </div>
+
+      <div id="result" class="result hidden" aria-live="polite"></div>
+      <div id="loading" class="loading hidden">Carregando...</div>
+      <div id="error" class="error hidden"></div>
+    </section>
+
+    <section class="card history-card">
+      <h3>Histórico (últimas conversões)</h3>
+      <ul id="historyList" class="history-list"></ul>
+      <div class="row">
+        <button id="clearHistory" class="btn muted">Limpar histórico</button>
+      </div>
+    </section>
+
+    <footer class="footer muted">
+      Projeto de estudo • HTML / CSS / JS • Dados: exchangerate.host
+    </footer>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
